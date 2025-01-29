@@ -29,3 +29,38 @@ b[12] = 99;
 
 console.log(b);//you can add an element at any given index,if you're adding item at some non end  place,
 //then that much empty slots will be added to array and then the value specified will be added at specified index
+
+//Looping through an Array
+
+let myArray = [1,"Hello",false,true,"myStr",{'a':true,'b':"hellio"}];
+
+for(let i=0;i<myArray.length;i++){
+    console.log(myArray[i]);
+}
+
+//For-Of Loop
+for(let val of myArray){
+    console.log(val);
+}
+
+//For in loop
+
+for(let index in myArray){
+    console.log(myArray[index]);
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------------------
+let fruits = ["apple","mango"];
+fruits.push("kiwi");
+console.log(fruits);
+fruits.pop();
+fruits.push("banana");
+fruits.push("cherry")
+console.log(fruits);
+fruits.shift();//removes the first element of the array
+console.log(fruits);
+fruits.unshift("coconut","guava");//adds elements to the start
+console.log(fruits);
+
+console.log(fruits instanceof Array);
+console.log(Array.isArray(fruits));

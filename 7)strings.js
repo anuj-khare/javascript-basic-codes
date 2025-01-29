@@ -17,3 +17,8 @@ console.log(str1.split("-"));
 let url = "https://youtube.com/watch?v=j1h35vhajvk14bvds1k"
 console.log(url.split("="));//or
 console.log(url.split("?"))
+
+//LastIndex method
+let s1 = "ba ab ab ab aaa ab"
+console.log(s1.length);
+console.log(s1.lastIndexOf("ab",15));//Returns either the last occurence or the last occurence of the given string before the provided index
