@@ -19,5 +19,5 @@ function incr(){
 incr();
 console.log("line 13 "+ x);//10
 
-//Note : variables declared with var can have local or global scope,if they are declared inside a function,
+//Note : variables declared with var can have local or global scope.If they are declared inside a function,
 // then their scope becomes local.Else ,if they are declared outside a function , then their scope becomes global.
