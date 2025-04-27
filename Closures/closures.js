@@ -27,3 +27,24 @@ const counter = (function () {
 counter.increment(); 
 counter.increment(); 
 counter.reset();
+
+function variableCounter(initialValue,difference){
+    //arguments passed in outer functions are also included in closure scope,i.e,wont be destroyed once outer functions has executed
+    //since they're being used inside inner function.
+    return {
+        up() {
+            initialValue += difference
+            console.log(initialValue);
+        },
+        down(){
+            initialValue -= difference;
+            console.log(initialValue)
+        }
+    }
+}
+
+let setUpCustomCounter = variableCounter(27,3);
+setUpCustomCounter.up();
+setUpCustomCounter.up();
+setUpCustomCounter.up();
+setUpCustomCounter.down();
