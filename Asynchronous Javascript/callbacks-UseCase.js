@@ -6,7 +6,7 @@ function download(url){
     console.log(`Downloading from the ${url}`);
     setTimeout(()=> {
         console.log(`File has been succesfully downloaded`)
-    },3000);
+    },5000);
 }
 
 function compress(filepath){
@@ -22,7 +22,7 @@ function upload(server,file){
     console.log(`Uploading ${file} to the %{server}`)
     setTimeout(()=>{
         console.log(`Upload successfully to ${server}/${file}`)
-    },3000)
+    },2000)
 }
 
 download("https://www.google.com/imagesa1")

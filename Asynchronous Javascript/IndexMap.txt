@@ -1,0 +1,12 @@
+Where to start : 
+
+1)let vs var
+2)Execution Context
+3)Equality Operations
+4)Objects,Pass by value and pass by reference
+4)Prototype chaining
+5)Closures
+IIFE,IIFEs,
+6)promise.js,promise2.js,promise3.js
+Callbacks : usecase,converting setTimeout to callback,errro first callback,
+converting callback to promises,promises error handling in chaining

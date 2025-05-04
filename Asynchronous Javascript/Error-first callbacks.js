@@ -42,8 +42,20 @@ function upload(server,file){
     },2000)
 }
 
+//alternate implementation of function upload , where in it also expects a callback,so when you call upload function ,you can simply provide empty definition in the 3rd argument
 
-download("www.google.com/imagea1",(error1,fileName)=>{
+function alternateUpload(server,file,postUpload){
+    console.log(`Uploading ${file} to the server`)
+    if(!server.startsWith('ftp')){
+        return postUpload(new Error("we only upload to the ftp servers"))
+    }
+    setTimeout(()=>{
+        let remotePath = `${server}/${file}`
+        postUpload(null,remotePath)
+    },2000)
+}
+
+download("http://www.google.com/imagea1",(error1,fileName)=>{
     if(error1){
         throw error1;
     }
@@ -54,3 +66,17 @@ download("www.google.com/imagea1",(error1,fileName)=>{
         upload("D",compressedFile);
     })
 })
+
+download("http://www.google.com/imagea1",(error1,fileName)=>{
+    if(error1){
+        throw error1;
+    }
+    compress(fileName,"zip",(error2,compressedFile) =>{
+        if(error2){
+            throw error2
+        }
+        alternateUpload("ftp",compressedFile,()=>{});
+    })
+})
+
+//Notice when you called alternateUpload , you passed in empty function as the parameter.
