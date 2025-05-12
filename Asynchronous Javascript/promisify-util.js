@@ -82,3 +82,45 @@ downloadPromise("http://www.google.com/image1")
     }
 
 */
+
+
+/* Note : the code above can be optimised a little bit so that prommise chain stays intact : 
+
+downloadPromise("url")
+    .catch(err => {
+        console.log("Download error");
+        throw err;
+    })
+    .then(file => {
+        // compress stage with local error handling
+        return compressPromise(file, 'zip')
+            .catch(err => {
+                console.log("Compression error");
+                throw err;
+            });
+    })
+    .then(zip => {
+        // upload stage
+        return uploadPromise("ftp://server", zip)
+            .catch(err => {
+                console.log("Upload error");
+                throw err;
+            });
+    })
+    .then(result => {
+        console.log("All done");
+    })
+    .catch(err => {
+        console.log("Final catch for any uncaught errors");
+    });
+
+    Here,the idea is to : 
+    The idea is to always return a promise from a .then() block so that the promise chain stays intact.
+    If I want separate error handling for each stage,
+    I can nest a .catch() inside the .then(), 
+    but I must always return the (possibly recovered or rethrown) promise,
+     so that subsequent .then()s behave as expected."
+
+     so always return prommise from inside the then block.
+*/ 
+
