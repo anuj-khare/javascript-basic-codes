@@ -8,9 +8,20 @@ Where to start :
 5)Closures
 IIFE,IIFEs,
 6)promise.js,promise2.js,promise3.js
-Callbacks : usecase,converting setTimeout to callback,errro first callback,
-converting callback to promises,promises error handling in chaining
+7)Callbacks : usecase,converting setTimeout to callback,errro first callback,
+8)converting callback to promises,promises error handling in chaining
+9)util.promisify and util.callbackify
+10)Async-Await,Async-Await hell ,Promise.all and map function in javascript
+11)Concurrency in Javascript vs Parallelism in Javascript
 
-util.promisify and util.callbackify
 
-Async-Await,Async-Await hell
+Note : Worth learning topics :
+
+ Macro-Queue and Micro-Queue
+ call,apply ,bind etc 
+ globals object 
+ DOM API
+ Hoisting
+ **this keyword
+ strict mode in javascript
+ Fetch Api
